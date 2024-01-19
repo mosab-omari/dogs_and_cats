@@ -1,0 +1,76 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../cubits/value_changed_cubit.dart';
+
+typedef ValueBuilder<Value> = Widget Function(Value value);
+typedef ValueReceived<Value> = void Function(Value value);
+
+class ValueChangedModel<Value> extends StatefulWidget {
+  final void Function(ValueChangedCubit<Value> cubit)? onCubitCreated;
+  final ValueBuilder<Value> builder;
+  final Widget Function()? emptyBuilder;
+
+  final Widget loadingWidget;
+  final ValueReceived<Value>? onValueChanged;
+  final bool fromProvider;
+  final Value? initialValue;
+  final ValueChangedCubit<Value>? cubit;
+
+  const ValueChangedModel(
+      {super.key,
+      this.initialValue,
+      this.cubit,
+      this.onCubitCreated,
+      required this.builder,
+      this.loadingWidget = const CircularProgressIndicator(),
+      this.onValueChanged,
+      this.emptyBuilder,
+      this.fromProvider = true});
+
+  @override
+  State<ValueChangedModel<Value>> createState() =>
+      _ValueChangedModelState<Value>();
+}
+
+class _ValueChangedModelState<Value> extends State<ValueChangedModel<Value>> {
+  late ValueChangedCubit<Value> cubit;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.cubit != null) {
+      cubit = widget.cubit!;
+    } else if (widget.fromProvider) {
+      cubit = context.read<ValueChangedCubit<Value>>();
+    } else if (widget.initialValue != null) {
+      cubit = ValueChangedCubit<Value>(value: widget.initialValue);
+    }
+    if (widget.onCubitCreated != null) widget.onCubitCreated!(cubit);
+  }
+
+  @override
+  void dispose() {
+    cubit.close();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<ValueChangedCubit, ValueChangedState>(
+      bloc: cubit,
+      listener: (context, state) {
+        if (state is GetValueSuccessfully<Value> &&
+            widget.onValueChanged != null) {
+          widget.onValueChanged!(state.value);
+        }
+      },
+      builder: (context, state) {
+        if (state is ValueChangedLoading) {
+          return widget.loadingWidget;
+        }
+        return widget.builder(state.value);
+      },
+    );
+  }
+}
