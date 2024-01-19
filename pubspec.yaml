@@ -32,6 +32,7 @@ dependencies:
   confetti: ^0.7.0
   flutter_platform_widgets: ^6.0.2
   animated_text_kit: ^4.2.2
+  readmore: ^2.2.0
 #  awesome_dialog: ^2.2.0
   shimmer: ^3.0.0
   dropdown_textfield: ^1.0.8

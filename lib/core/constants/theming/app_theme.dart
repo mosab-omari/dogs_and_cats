@@ -9,17 +9,17 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     navigationBarTheme: NavigationBarThemeData(
         iconTheme: const MaterialStatePropertyAll(
-            IconThemeData(color: AppColors.grey4)),
+            IconThemeData(color: AppColors.white)),
         labelTextStyle: MaterialStatePropertyAll(
             AppTheme.s10w500.copyWith(color: AppColors.grey4))),
     // unselectedWidgetColor: AppColors.shade10,
-    appBarTheme: AppBarTheme(
-        color: AppColors.primary2,
-        titleTextStyle: AppTheme.s24w700),
+    appBarTheme: const AppBarTheme(
+        color: AppColors.primary2, titleTextStyle: AppTheme.s24w700),
     primaryColor: AppColors.primary3,
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.grey1,
     textTheme: const TextTheme(
+
       headlineMedium: headlineMedium,
       headlineSmall: headlineSmall,
       headlineLarge: headlineLarge,
@@ -30,8 +30,12 @@ class AppTheme {
       //
       bodyMedium: bodyMedium,
     ),
-    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary2)
-        .copyWith(background: AppColors.backgroundColor),
+
+    iconTheme: const IconThemeData(color: AppColors.white),
+    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primary2).copyWith(
+      background: AppColors.backgroundColor,
+      surface: AppColors.white
+    ),
   );
 
   static const String fontGeneralSans = FontFamily.generalSans;
@@ -246,12 +250,14 @@ class AppTheme {
   static const TextStyle labelMedium = TextStyle(
     fontFamily: bodyFont,
     fontWeight: FontWeight.w400,
+    color: AppColors.white,
     fontSize: 14,
   );
 
   static const TextStyle labelLarge = TextStyle(
     fontFamily: bodyFont,
     fontWeight: FontWeight.w600,
+    color: AppColors.white,
     fontSize: 16,
   );
 
@@ -271,12 +277,14 @@ class AppTheme {
   static const TextStyle titleMedium = TextStyle(
     fontFamily: bodyFont,
     fontWeight: FontWeight.w600,
+    color: AppColors.white,
     fontSize: 16,
   );
 
   static const TextStyle titleLarge = TextStyle(
     fontFamily: bodyFont,
     fontWeight: FontWeight.w800,
+    color: AppColors.white,
     fontSize: 24,
   );
 
@@ -289,17 +297,20 @@ class AppTheme {
   static const TextStyle headlineBorderedButtonText = TextStyle(
     fontFamily: bodyFont,
     fontWeight: FontWeight.w500,
+    color: AppColors.white,
     fontSize: 17,
   );
 
   static const TextStyle bodyBorderedButtonText = TextStyle(
     fontFamily: bodyFont,
     fontWeight: FontWeight.w500,
+    color: AppColors.white,
     fontSize: 14,
   );
 
   static const TextStyle bodyButtonText = TextStyle(
     fontFamily: bodyFont,
+    color: AppColors.white,
     fontWeight: FontWeight.w500,
     fontSize: 14,
   );
@@ -307,17 +318,20 @@ class AppTheme {
   static const TextStyle headlineLarge = TextStyle(
     fontFamily: headlineFont,
     fontWeight: FontWeight.w400,
+    color: AppColors.white,
     fontSize: 36,
   );
 
   static const TextStyle headlineMedium = TextStyle(
     fontFamily: headlineFont,
+    color: AppColors.white,
     fontWeight: FontWeight.w400,
     fontSize: 32,
   );
 
   static const TextStyle headlineSmall = TextStyle(
     fontFamily: headlineFont,
+    color: AppColors.white,
     fontWeight: FontWeight.w400,
     fontSize: 28,
   );
@@ -336,6 +350,7 @@ class AppTheme {
 
   static const TextStyle headlineExtraSmall = TextStyle(
     fontFamily: headlineFont,
+    color: AppColors.white,
     fontWeight: FontWeight.w400,
     fontSize: 20,
   );

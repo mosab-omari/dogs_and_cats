@@ -4,9 +4,7 @@ import 'package:algooru_flutter_assessment/features/home_app/presentation/pages/
 import 'package:algooru_flutter_assessment/features/home_app/presentation/pages/dogs_page.dart';
 import 'package:algooru_flutter_assessment/gen/assets.gen.dart';
 import 'package:auto_route/annotations.dart';
-import 'package:dropdown_textfield/dropdown_textfield.dart';
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 
 import '../../../../core/constants/colors/app_colors.dart';
 

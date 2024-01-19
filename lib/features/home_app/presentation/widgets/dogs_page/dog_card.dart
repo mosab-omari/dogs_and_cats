@@ -1,5 +1,6 @@
 import 'package:algooru_flutter_assessment/core/constants/colors/app_colors.dart';
 import 'package:algooru_flutter_assessment/core/constants/theming/app_theme.dart';
+import 'package:algooru_flutter_assessment/core/widgets/text/expandable_text.dart';
 import 'package:algooru_flutter_assessment/features/home_app/data/models/get_animals_response.dart';
 import 'package:algooru_flutter_assessment/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +29,6 @@ class DogCard extends StatelessWidget {
             fit: StackFit.expand,
             children: [
               Stack(
-                fit: StackFit.expand,
                 children: [
                   Stack(
                     fit: StackFit.expand,
@@ -91,20 +91,42 @@ class DogCard extends StatelessWidget {
                       Text(dog.breeds!.first.breedGroup!,
                           style: AppTheme.s15w600
                               .copyWith(color: AppColors.white)),
+                      Column(
+                        children: [
+                          if (!(dog.breeds?.isEmpty ?? true) &&
+                              (dog.breeds?.first.weight?.metric != null))
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.monitor_weight,
+                                ),
+                                Gap(4),
+                                Text(dog.breeds!.first.weight!.metric!,
+                                    style: AppTheme.s15w600
+                                        .copyWith(color: AppColors.white)),
+                              ],
+                            ),
+                          if (!(dog.breeds?.isEmpty ?? true) &&
+                              (dog.breeds?.first.height?.metric != null))
+                            Row(
+                              children: [
+                                Icon(
+                                  Icons.height,
+                                ),
+                                Gap(4),
+                                Text(dog.breeds!.first.height!.metric!,
+                                    style: AppTheme.s15w600
+                                        .copyWith(color: AppColors.white)),
+                              ],
+                            )
+                        ],
+                      )
                     ],
                   ),
                 ),
               if (!(dog.breeds?.isEmpty ?? true) &&
                   (dog.breeds?.first.temperament != null))
-                Align(
-                  alignment: AlignmentDirectional.bottomStart,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(dog.breeds!.first.temperament!,
-                        style:
-                            AppTheme.s15w600.copyWith(color: AppColors.white)),
-                  ),
-                ),
+                ExpandableText(title: dog.breeds!.first.temperament!),
             ],
           ),
         ),
