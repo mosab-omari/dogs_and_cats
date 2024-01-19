@@ -1,4 +1,4 @@
-# algooru_flutter_assessment
+# Cats & Dogs
 
 A new Flutter project.
 
