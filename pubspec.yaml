@@ -34,9 +34,7 @@ dependencies:
   animated_text_kit: ^4.2.2
 #  awesome_dialog: ^2.2.0
   shimmer: ^3.0.0
-  #Not used usually just for the purpose of this assessment
-  flutter_randomcolor: ^1.0.14
-  hexcolor: ^3.0.1
+  dropdown_textfield: ^1.0.8
 
 
   #State Management

@@ -40,6 +40,17 @@ class $AssetsAnimationsGen {
   List<LottieGenImage> get values => [imageLoading, loading];
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/dog_temprement.svg
+  SvgGenImage get dogTemprement =>
+      const SvgGenImage('assets/icons/dog_temprement.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [dogTemprement];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -59,17 +70,13 @@ class $AssetsLocalesGen {
 class $AssetsImagesGeneralGen {
   const $AssetsImagesGeneralGen();
 
-  /// File path: assets/images/general/app_logo.jpeg
+  /// File path: assets/images/general/app_logo.png
   AssetGenImage get appLogo =>
-      const AssetGenImage('assets/images/general/app_logo.jpeg');
+      const AssetGenImage('assets/images/general/app_logo.png');
 
-  /// File path: assets/images/general/cat_paw.png
-  AssetGenImage get catPaw =>
-      const AssetGenImage('assets/images/general/cat_paw.png');
-
-  /// File path: assets/images/general/dog_paw.webp
-  AssetGenImage get dogPaw =>
-      const AssetGenImage('assets/images/general/dog_paw.webp');
+  /// File path: assets/images/general/home_appbar.jpeg
+  AssetGenImage get homeAppbar =>
+      const AssetGenImage('assets/images/general/home_appbar.jpeg');
 
   /// File path: assets/images/general/image-placeholder.svg
   SvgGenImage get imagePlaceholder =>
@@ -80,14 +87,14 @@ class $AssetsImagesGeneralGen {
       const AssetGenImage('assets/images/general/no-data.jpeg');
 
   /// List of all assets
-  List<dynamic> get values =>
-      [appLogo, catPaw, dogPaw, imagePlaceholder, noData];
+  List<dynamic> get values => [appLogo, homeAppbar, imagePlaceholder, noData];
 }
 
 class Assets {
   Assets._();
 
   static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLocalesGen locales = $AssetsLocalesGen();
   static const $EnvGen env = $EnvGen();

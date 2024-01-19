@@ -15,7 +15,7 @@ class AppTheme {
     // unselectedWidgetColor: AppColors.shade10,
     appBarTheme: AppBarTheme(
         color: AppColors.primary2,
-        titleTextStyle: AppTheme.s24w700.copyWith(color: AppColors.black)),
+        titleTextStyle: AppTheme.s24w700),
     primaryColor: AppColors.primary3,
     useMaterial3: true,
     scaffoldBackgroundColor: AppColors.grey1,
