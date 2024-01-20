@@ -40,17 +40,6 @@ class $AssetsAnimationsGen {
   List<LottieGenImage> get values => [imageLoading, loading];
 }
 
-class $AssetsIconsGen {
-  const $AssetsIconsGen();
-
-  /// File path: assets/icons/dog_temprement.svg
-  SvgGenImage get dogTemprement =>
-      const SvgGenImage('assets/icons/dog_temprement.svg');
-
-  /// List of all assets
-  List<SvgGenImage> get values => [dogTemprement];
-}
-
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -94,7 +83,6 @@ class Assets {
   Assets._();
 
   static const $AssetsAnimationsGen animations = $AssetsAnimationsGen();
-  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsLocalesGen locales = $AssetsLocalesGen();
   static const $EnvGen env = $EnvGen();

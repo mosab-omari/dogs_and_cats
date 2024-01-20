@@ -1,7 +1,7 @@
 import 'package:algooru_flutter_assessment/core/widgets/tabs/custom_page_view.dart';
 import 'package:algooru_flutter_assessment/core/widgets/tabs/custom_tab_bar.dart';
-import 'package:algooru_flutter_assessment/features/home_app/presentation/pages/cats_page.dart';
-import 'package:algooru_flutter_assessment/features/home_app/presentation/pages/dogs_page.dart';
+import 'package:algooru_flutter_assessment/features/animals_details/presentation/pages/cats_page.dart';
+import 'package:algooru_flutter_assessment/features/animals_details/presentation/pages/dogs_page.dart';
 import 'package:algooru_flutter_assessment/gen/assets.gen.dart';
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
@@ -67,10 +67,10 @@ class HomeApp extends StatelessWidget {
                 color: AppColors.white,
                 borderRadius: BorderRadius.circular(8),
               ),
-              tabs: ['Dogs', 'Cats'],
+              tabs: const ['Dogs', 'Cats'],
             ),
           ),
-          pages: [
+          pages: const [
             DogsPage(),
             CatsPage(),
           ],

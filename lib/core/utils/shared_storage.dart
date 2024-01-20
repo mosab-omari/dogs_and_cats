@@ -13,6 +13,11 @@ class SharedStorage {
   static GetStorage box = GetStorage(_storageName);
   static const _secureStorage = FlutterSecureStorage();
 
+  static init() async {
+    await GetStorage.init(_storageName);
+  }
+
+
   static T? get<T>(StorageData key) {
     return box.read<T>(key.name);
   }
