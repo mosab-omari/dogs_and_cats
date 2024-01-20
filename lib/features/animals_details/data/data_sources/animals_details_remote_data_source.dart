@@ -1,8 +1,8 @@
 import 'package:algooru_flutter_assessment/core/api/core_models/network/remote_data_source_params.dart';
 import 'package:algooru_flutter_assessment/core/api/client/client.dart';
+import 'package:algooru_flutter_assessment/features/animals_details/domain/entities/animals_list.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/config/app_config.dart';
 import '../models/animals_list_model.dart';
 
 enum AnimalType {
@@ -11,7 +11,7 @@ enum AnimalType {
 }
 
 abstract class AnimalsDetailsRemoteDataSource {
-  Future<AnimalsListModel> getAnimalsResponse(
+  Future<AnimalsList> getAnimalsResponse(
       RemoteDataSourceParams networkRequestParams);
 }
 
@@ -33,7 +33,7 @@ abstract class AnimalDetailsRemoteDataSourceImpl
   });
 
   @override
-  Future<AnimalsListModel> getAnimalsResponse(
+  Future<AnimalsList> getAnimalsResponse(
       RemoteDataSourceParams networkRequestParams);
 }
 

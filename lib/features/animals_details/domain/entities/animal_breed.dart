@@ -1,8 +1,8 @@
-import '../../data/models/animal_breed_model.dart';
+import 'animal_weight.dart';
 
 class AnimalBreed {
-  Weight? weight;
-  Weight? height;
+  AnimalWeight? weight;
+  AnimalWeight? height;
   dynamic id;
   String? name;
   String? bredFor;
@@ -14,15 +14,13 @@ class AnimalBreed {
 
   AnimalBreed(
       {this.weight,
-        this.height,
-        this.id,
-        this.name,
-        this.bredFor,
-        this.lifeSpan,
-        this.breedGroup,
-        this.history,
-        this.temperament,
-        this.referenceImageId});
-
+      this.height,
+      this.id,
+      this.name,
+      this.bredFor,
+      this.lifeSpan,
+      this.breedGroup,
+      this.history,
+      this.temperament,
+      this.referenceImageId});
 }
-

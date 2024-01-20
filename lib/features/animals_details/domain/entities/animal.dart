@@ -1,6 +1,5 @@
 import 'package:algooru_flutter_assessment/features/animals_details/domain/entities/animal_breed.dart';
 
-import '../../data/models/animal_breed_model.dart';
 
 class Animal {
   String? id;

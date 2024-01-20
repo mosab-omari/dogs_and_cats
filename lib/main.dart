@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:algooru_flutter_assessment/core/config/bindings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -31,6 +32,7 @@ class App extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp.router(
+        builder: EasyLoading.init(),
         debugShowCheckedModeBanner: false,
         routerConfig: appRouter.config(),
         title: 'Dogs and Cats',

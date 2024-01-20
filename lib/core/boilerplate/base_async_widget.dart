@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gap/gap.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../features/animals_details/presentation/manager/cats_list_provider/get_cats_list.dart';
 import '../../project_core/widgets/button/app_button.dart';
 import '../../project_core/widgets/button/button_text.dart';
 import '../constants/colors/app_colors.dart';
@@ -12,30 +11,36 @@ import '../constants/colors/app_colors.dart';
 class AppAsyncWidget<Model> extends ConsumerWidget {
   const AppAsyncWidget(
       {super.key,
-      this.mockData,
       this.withRefresh = true,
+      this.onRefresh,
+      this.skipLoadingOnRefresh = false,
+      this.mockData,
       required this.builder,
       required this.providerListenable});
 
-  final bool withRefresh;
   final Widget Function(Model model) builder;
+  final Function()? onRefresh;
   final AutoDisposeFutureProvider<Model> providerListenable;
   final Model? mockData;
+  final bool skipLoadingOnRefresh;
+  final bool withRefresh;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncValue = ref.watch(providerListenable);
 
     return asyncValue.when(
-      skipLoadingOnRefresh: false,
+      skipLoadingOnRefresh: skipLoadingOnRefresh,
       data: (data) {
         Widget child = builder(data);
         if (withRefresh) {
           child = RefreshIndicator(
-              child: child,
               onRefresh: () async {
+                if (onRefresh != null) onRefresh!();
                 ref.invalidate(providerListenable);
-              });
+                await ref.refresh(providerListenable.future);
+              },
+              child: child);
         }
         return child;
       },
@@ -53,7 +58,7 @@ class AppAsyncWidget<Model> extends ConsumerWidget {
                   text: 'Refresh',
                 ),
                 onTap: () async {
-                  ref.refresh(getCatsListProvider);
+                  ref.invalidate(providerListenable);
                 },
               ),
               const Spacer(),
@@ -68,7 +73,7 @@ class AppAsyncWidget<Model> extends ConsumerWidget {
             ? const Center(
                 child: CircularProgressIndicator(),
               )
-            : builder(mockData!),
+            : builder(mockData as Model),
       ),
     );
   }

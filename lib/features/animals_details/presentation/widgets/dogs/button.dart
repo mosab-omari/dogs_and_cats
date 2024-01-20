@@ -13,7 +13,7 @@ class DogButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: AppButton(
-        text: ButtonText(text: 'Click Me!'),
+        text: const ButtonText(text: 'Click Me!'),
         onTap: onTap,
       ),
     );

@@ -39,7 +39,7 @@ class HomeApp extends StatelessWidget {
           ),
         ),
         body: CustomPageView(
-          padding: EdgeInsets.only(top: 20.0),
+          padding: const EdgeInsets.only(top: 20.0),
           tabBar: Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             padding: const EdgeInsets.all(2),

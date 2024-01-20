@@ -1,4 +1,6 @@
+import 'package:algooru_flutter_assessment/features/animals_details/data/models/animal_weight_model.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/domain/entities/animal_breed.dart';
+
 
 class AnimalBreedModel extends AnimalBreed {
   AnimalBreedModel(
@@ -15,8 +17,12 @@ class AnimalBreedModel extends AnimalBreed {
 
   factory AnimalBreedModel.fromJson(Map<String, dynamic> json) {
     return AnimalBreedModel(
-      weight: json['weight'] != null ? Weight.fromJson(json['weight']) : null,
-      height: json['height'] != null ? Weight.fromJson(json['height']) : null,
+      weight: json['weight'] != null
+          ? AnimalWeightModel.fromJson(json['weight'])
+          : null,
+      height: json['height'] != null
+          ? AnimalWeightModel.fromJson(json['height'])
+          : null,
       id: json['id'],
       name: json['name'],
       bredFor: json['bred_for'],

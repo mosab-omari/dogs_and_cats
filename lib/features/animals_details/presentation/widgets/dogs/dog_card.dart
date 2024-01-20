@@ -1,15 +1,11 @@
 import 'package:algooru_flutter_assessment/core/constants/colors/app_colors.dart';
 import 'package:algooru_flutter_assessment/core/constants/theming/app_theme.dart';
 import 'package:algooru_flutter_assessment/core/widgets/text/expandable_text.dart';
-import 'package:algooru_flutter_assessment/features/animals_details/data/models/animals_list_model.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/domain/entities/animal.dart';
-import 'package:algooru_flutter_assessment/gen/assets.gen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../../core/widgets/image/app_image.dart';
-import '../../../data/models/animal_model.dart';
 
 class DogCard extends StatelessWidget {
   const DogCard({super.key, required this.dog, this.onTap});
@@ -24,7 +20,7 @@ class DogCard extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
         child: Container(
-          decoration: BoxDecoration(color: AppColors.black),
+          decoration: const BoxDecoration(color: AppColors.black),
           height: 300,
           child: Stack(
             fit: StackFit.expand,
@@ -98,10 +94,10 @@ class DogCard extends StatelessWidget {
                               (dog.breeds?.first.weight?.metric != null))
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.monitor_weight,
                                 ),
-                                Gap(4),
+                                const Gap(4),
                                 Text(dog.breeds!.first.weight!.metric!,
                                     style: AppTheme.s15w600
                                         .copyWith(color: AppColors.white)),
@@ -111,10 +107,10 @@ class DogCard extends StatelessWidget {
                               (dog.breeds?.first.height?.metric != null))
                             Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.height,
                                 ),
-                                Gap(4),
+                                const Gap(4),
                                 Text(dog.breeds!.first.height!.metric!,
                                     style: AppTheme.s15w600
                                         .copyWith(color: AppColors.white)),

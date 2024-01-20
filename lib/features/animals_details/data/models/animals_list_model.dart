@@ -1,4 +1,3 @@
-import 'package:algooru_flutter_assessment/core/api/core_models/response_model.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/domain/entities/animals_list.dart';
 
 import 'animal_model.dart';

@@ -1,7 +1,5 @@
-import 'package:algooru_flutter_assessment/features/animals_details/data/data_sources/animals_details_remote_data_source.dart';
-import 'package:algooru_flutter_assessment/features/animals_details/data/data_sources/cats_details_remote_data_source.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/data/data_sources/dogs_details_remote_data_source.dart';
-import 'package:algooru_flutter_assessment/features/animals_details/data/models/animals_params.dart';
+import 'package:algooru_flutter_assessment/features/animals_details/data/models/animals_list_params.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/data/models/animals_list_model.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/data/repositories/animals_details_repository_impl.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/domain/entities/animal.dart';
@@ -17,6 +15,6 @@ Future<List<Animal>> getDogsList(GetDogsListRef ref) async {
   final response = await GetAnimalsResponseModel(AnimalDetailsRepositoryImpl(
           remoteDataSource:
               DogsDetailsRemoteDataSource(client: Client<AnimalsListModel>())))
-      .call(AnimalsDetailsParams(limit: 10));
+      .call(AnimalsListParams(limit: 10));
   return response.animals;
 }

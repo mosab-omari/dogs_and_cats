@@ -20,9 +20,9 @@ mixin _$RemoteDataSourceParams<Model> {
   Model Function(List<dynamic>)? get converter =>
       throw _privateConstructorUsedError;
   ApiMethod get apiMethod => throw _privateConstructorUsedError;
-  NetworkRequestModel? get data => throw _privateConstructorUsedError;
+  RemoteDataSourceRequestModel? get data => throw _privateConstructorUsedError;
   String? get apiKey => throw _privateConstructorUsedError;
-  NetworkRequestModel? get queryParameters =>
+  RemoteDataSourceRequestModel? get queryParameters =>
       throw _privateConstructorUsedError;
   bool get withAuthentication => throw _privateConstructorUsedError;
   bool get withCaching => throw _privateConstructorUsedError;
@@ -46,9 +46,9 @@ abstract class $RemoteDataSourceParamsCopyWith<Model, $Res> {
       {String url,
       Model Function(List<dynamic>)? converter,
       ApiMethod apiMethod,
-      NetworkRequestModel? data,
+      RemoteDataSourceRequestModel? data,
       String? apiKey,
-      NetworkRequestModel? queryParameters,
+      RemoteDataSourceRequestModel? queryParameters,
       bool withAuthentication,
       bool withCaching,
       bool uploadNotification,
@@ -98,7 +98,7 @@ class _$RemoteDataSourceParamsCopyWithImpl<Model, $Res,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as NetworkRequestModel?,
+              as RemoteDataSourceRequestModel?,
       apiKey: freezed == apiKey
           ? _value.apiKey
           : apiKey // ignore: cast_nullable_to_non_nullable
@@ -106,7 +106,7 @@ class _$RemoteDataSourceParamsCopyWithImpl<Model, $Res,
       queryParameters: freezed == queryParameters
           ? _value.queryParameters
           : queryParameters // ignore: cast_nullable_to_non_nullable
-              as NetworkRequestModel?,
+              as RemoteDataSourceRequestModel?,
       withAuthentication: null == withAuthentication
           ? _value.withAuthentication
           : withAuthentication // ignore: cast_nullable_to_non_nullable
@@ -143,9 +143,9 @@ abstract class _$$BaseRequestParamsImplCopyWith<Model, $Res>
       {String url,
       Model Function(List<dynamic>)? converter,
       ApiMethod apiMethod,
-      NetworkRequestModel? data,
+      RemoteDataSourceRequestModel? data,
       String? apiKey,
-      NetworkRequestModel? queryParameters,
+      RemoteDataSourceRequestModel? queryParameters,
       bool withAuthentication,
       bool withCaching,
       bool uploadNotification,
@@ -193,7 +193,7 @@ class __$$BaseRequestParamsImplCopyWithImpl<Model, $Res>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as NetworkRequestModel?,
+              as RemoteDataSourceRequestModel?,
       apiKey: freezed == apiKey
           ? _value.apiKey
           : apiKey // ignore: cast_nullable_to_non_nullable
@@ -201,7 +201,7 @@ class __$$BaseRequestParamsImplCopyWithImpl<Model, $Res>
       queryParameters: freezed == queryParameters
           ? _value.queryParameters
           : queryParameters // ignore: cast_nullable_to_non_nullable
-              as NetworkRequestModel?,
+              as RemoteDataSourceRequestModel?,
       withAuthentication: null == withAuthentication
           ? _value.withAuthentication
           : withAuthentication // ignore: cast_nullable_to_non_nullable
@@ -250,11 +250,11 @@ class _$BaseRequestParamsImpl<Model> extends _BaseRequestParams<Model> {
   @override
   final ApiMethod apiMethod;
   @override
-  final NetworkRequestModel? data;
+  final RemoteDataSourceRequestModel? data;
   @override
   final String? apiKey;
   @override
-  final NetworkRequestModel? queryParameters;
+  final RemoteDataSourceRequestModel? queryParameters;
   @override
   @JsonKey()
   final bool withAuthentication;
@@ -330,9 +330,9 @@ abstract class _BaseRequestParams<Model> extends RemoteDataSourceParams<Model> {
       {required final String url,
       required final Model Function(List<dynamic>)? converter,
       required final ApiMethod apiMethod,
-      final NetworkRequestModel? data,
+      final RemoteDataSourceRequestModel? data,
       final String? apiKey,
-      final NetworkRequestModel? queryParameters,
+      final RemoteDataSourceRequestModel? queryParameters,
       final bool withAuthentication,
       final bool withCaching,
       final bool uploadNotification,
@@ -347,11 +347,11 @@ abstract class _BaseRequestParams<Model> extends RemoteDataSourceParams<Model> {
   @override
   ApiMethod get apiMethod;
   @override
-  NetworkRequestModel? get data;
+  RemoteDataSourceRequestModel? get data;
   @override
   String? get apiKey;
   @override
-  NetworkRequestModel? get queryParameters;
+  RemoteDataSourceRequestModel? get queryParameters;
   @override
   bool get withAuthentication;
   @override

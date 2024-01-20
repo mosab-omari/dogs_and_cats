@@ -13,9 +13,11 @@ class DogsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppAsyncWidget<List<Animal>>(
         mockData: List.generate(5, (index) => AnimalModel()),
-        builder: (data) => DogsCardsList(
-              dogs: data,
-            ),
+        builder: (data) {
+          return DogsCardsList(
+            dogs: data,
+          );
+        },
         providerListenable: getDogsListProvider);
   }
 }

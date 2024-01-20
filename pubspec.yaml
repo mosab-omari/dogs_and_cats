@@ -18,12 +18,15 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   flutter_dotenv: ^5.1.0
+  visibility_detector: ^0.4.0+2
 
 
   #Gen
   freezed: ^2.4.6
   freezed_annotation: ^2.4.1
   regexpattern: ^2.6.0
+  json_annotation: ^4.8.1
+
 
 
   #UI
@@ -34,14 +37,15 @@ dependencies:
   flutter_platform_widgets: ^6.0.2
   animated_text_kit: ^4.2.2
   readmore: ^2.2.0
-#  awesome_dialog: ^2.2.0
+  #  awesome_dialog: ^2.2.0
   shimmer: ^3.0.0
   dropdown_textfield: ^1.0.8
-
+  flutter_easyloading: ^3.0.5
 
   #State Management
   riverpod_annotation: ^2.3.3
   flutter_riverpod: ^2.4.9
+
 
 
   #used for custom external libraries not for the project's main features
@@ -77,11 +81,6 @@ dependencies:
   auto_route: ^7.8.4
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-
-
-  flutter_lints: ^2.0.0
   #Gen
   auto_route_generator: ^7.3.2
   build_runner: ^2.4.7
@@ -90,9 +89,19 @@ dev_dependencies:
   riverpod_generator: ^2.3.9
   riverpod_lint: ^2.3.7
   custom_lint: ^0.5.8
+  json_serializable: ^6.7.1
+
   #Logging
   flutter_printer: ^2.0.3
+
+  #Tests
+  flutter_test:
+    sdk: flutter
   mockito: ^5.4.4
+  flutter_lints: ^2.0.0
+
+
+
 
 
 flutter_gen:

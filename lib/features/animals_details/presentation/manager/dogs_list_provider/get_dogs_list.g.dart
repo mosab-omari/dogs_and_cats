@@ -6,7 +6,7 @@ part of 'get_dogs_list.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getDogsListHash() => r'c8e1860356501852d5cc18d95a978d7806841756';
+String _$getDogsListHash() => r'9a82963246f23e3c5d453f5046fd3acb76bb3aa9';
 
 /// See also [getDogsList].
 @ProviderFor(getDogsList)

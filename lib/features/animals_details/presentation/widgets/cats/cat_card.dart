@@ -3,7 +3,6 @@ import 'package:algooru_flutter_assessment/core/widgets/image/app_image.dart';
 import 'package:algooru_flutter_assessment/features/animals_details/domain/entities/animal.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/models/animal_model.dart';
 
 class CatCard extends StatelessWidget {
   const CatCard({super.key, required this.cat, this.onTap});

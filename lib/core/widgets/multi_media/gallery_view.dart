@@ -7,7 +7,6 @@ import 'package:photo_view/photo_view_gallery.dart';
 
 import '../../constants/colors/app_colors.dart';
 import '../../utils/navigation.dart';
-import '../../utils/utils.dart';
 
 class GalleryPhotoViewWrapper extends StatefulWidget {
   GalleryPhotoViewWrapper({

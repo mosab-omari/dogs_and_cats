@@ -32,10 +32,10 @@ class DogsCardsList extends ConsumerWidget {
 
     provider.whenData((value) async {
       scrollController.addListener(() async {
-        if (scrollController.offset >=
+        if (scrollController.position.pixels >=
             scrollController.position.maxScrollExtent) {
           streamController.sink.add(1);
-        } else if (scrollController.offset <
+        } else if (scrollController.position.pixels <
             scrollController.position.maxScrollExtent - 80) {
           streamController.sink.add(0);
         }
