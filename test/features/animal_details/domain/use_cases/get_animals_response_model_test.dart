@@ -45,7 +45,5 @@ void main() {
     final call = useCase;
 
     expect(() => call(params), throwsA(const TypeMatcher<ServerException>()));
-    // verify(repo.getAnimalsResponse(params));
-    // verifyNoMoreInteractions(repo);
   });
 }
