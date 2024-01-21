@@ -6,11 +6,11 @@ part of 'get_dogs_list.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getDogsListHash() => r'9a82963246f23e3c5d453f5046fd3acb76bb3aa9';
+String _$getDogsListHash() => r'364aee47a34b4ffebc688b30e6557a4d31e4fe8a';
 
 /// See also [getDogsList].
 @ProviderFor(getDogsList)
-final getDogsListProvider = AutoDisposeFutureProvider<List<Animal>>.internal(
+final getDogsListProvider = AutoDisposeFutureProvider<AnimalsList>.internal(
   getDogsList,
   name: r'getDogsListProvider',
   debugGetCreateSourceHash:
@@ -19,6 +19,6 @@ final getDogsListProvider = AutoDisposeFutureProvider<List<Animal>>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef GetDogsListRef = AutoDisposeFutureProviderRef<List<Animal>>;
+typedef GetDogsListRef = AutoDisposeFutureProviderRef<AnimalsList>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

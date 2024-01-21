@@ -19,7 +19,6 @@ List<Animal> animals = [];
 
 @riverpod
 Future<AnimalsList> getCatsList(GetCatsListRef ref) async {
-  print('HABIBI');
   loading = true;
   EasyLoading.show(dismissOnTap: true);
   try {

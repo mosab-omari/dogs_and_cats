@@ -15,7 +15,7 @@ class CatsPage extends ConsumerWidget {
     final ScrollController scrollController = ScrollController();
     scrollController.addListener(() {
       if (scrollController.position.pixels >=
-          scrollController.position.maxScrollExtent - 400) {
+          scrollController.position.maxScrollExtent) {
         if (!loading) ref.refresh(getCatsListProvider);
       }
     });
