@@ -5,7 +5,7 @@ part 'animals_list_params.freezed.dart';
 
 part 'animals_list_params.g.dart';
 
-@Freezed(fromJson: true, toJson: true)
+@Freezed(fromJson: true,)
 sealed class AnimalsListParams extends RemoteDataSourceRequestModel
     with _$AnimalsListParams {
   AnimalsListParams._();
@@ -28,6 +28,7 @@ sealed class AnimalsListParams extends RemoteDataSourceRequestModel
     data['page'] = page;
     data['order'] = order;
     data['has_breeds'] = hasBreeds;
+    print(data);
     return data..removeWhere((key, value) => value == null);
   }
 }
