@@ -10,17 +10,13 @@ import 'package:mockito/mockito.dart';
 
 import 'get_animals_response_model_test.mocks.dart';
 
-
 @GenerateMocks([AnimalsDetailsRepository])
 void main() {
-  late final MockAnimalsDetailsRepository repo;
-  late final AnimalsListParams params;
-  setUp(() {
-    repo = MockAnimalsDetailsRepository();
-    params = AnimalsListParams(limit: 3);
-  });
-
   test('should get animal details', () async {
+    final MockAnimalsDetailsRepository repo = MockAnimalsDetailsRepository();
+
+    final AnimalsListParams params = AnimalsListParams(limit: 3);
+
     GetAnimalsResponseModel useCase = GetAnimalsResponseModel(repo);
     when((repo.getAnimalsResponse(any))).thenAnswer((realInvocation) async =>
         Future.value(
@@ -35,7 +31,8 @@ void main() {
 
   test('throws an exception if the http call completes with an error',
       () async {
-    final repo = MockAnimalsDetailsRepository();
+    final MockAnimalsDetailsRepository repo = MockAnimalsDetailsRepository();
+
     final params = AnimalsListParams(limit: -1);
     GetAnimalsResponseModel useCase = GetAnimalsResponseModel(repo);
 

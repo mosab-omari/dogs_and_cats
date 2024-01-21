@@ -15,13 +15,3 @@ _$AnimalsListParamsImpl _$$AnimalsListParamsImplFromJson(
       order: json['order'] as String?,
       hasBreeds: json['has_breeds'] as int?,
     );
-
-Map<String, dynamic> _$$AnimalsListParamsImplToJson(
-        _$AnimalsListParamsImpl instance) =>
-    <String, dynamic>{
-      'limit': instance.limit,
-      'height': instance.height,
-      'page': instance.page,
-      'order': instance.order,
-      'has_breeds': instance.hasBreeds,
-    };

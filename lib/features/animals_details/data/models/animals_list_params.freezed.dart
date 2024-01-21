@@ -27,7 +27,6 @@ mixin _$AnimalsListParams {
   @JsonKey(name: 'has_breeds')
   int? get hasBreeds => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AnimalsListParamsCopyWith<AnimalsListParams> get copyWith =>
       throw _privateConstructorUsedError;
@@ -150,7 +149,7 @@ class __$$AnimalsListParamsImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+@JsonSerializable(createToJson: false)
 class _$AnimalsListParamsImpl extends _AnimalsListParams {
   _$AnimalsListParamsImpl(
       {this.limit,
@@ -204,13 +203,6 @@ class _$AnimalsListParamsImpl extends _AnimalsListParams {
   _$$AnimalsListParamsImplCopyWith<_$AnimalsListParamsImpl> get copyWith =>
       __$$AnimalsListParamsImplCopyWithImpl<_$AnimalsListParamsImpl>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AnimalsListParamsImplToJson(
-      this,
-    );
-  }
 }
 
 abstract class _AnimalsListParams extends AnimalsListParams {
